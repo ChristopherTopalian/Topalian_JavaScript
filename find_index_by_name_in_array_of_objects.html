@@ -43,13 +43,14 @@ function findTheIndex(searchWord)
             return whichArray.name === searchWord;
         }
     );
-	return index;
+    return index;
 }
 
 function displayResult(theChoice)
 {
     //display the name and abbreviation of the chosen index
-    document.getElementById("showResult").innerHTML = elements[findTheIndex(theChoice)].name + "<br>" + elements[findTheIndex(theChoice)].abbreviation;
+    document.getElementById("showResult").innerHTML = elements[findTheIndex(theChoice)].name + "<br>" +
+    elements[findTheIndex(theChoice)].abbreviation;
 }
 
 </script>
