@@ -22,21 +22,21 @@
 
 let elements = [
 {
-	name: 'Hydrogen',
-	abbreviation: 'H'
+    name: 'Hydrogen',
+    abbreviation: 'H'
 },
 {
-	name: 'Helium',
-	abbreviation: 'He'
+    name: 'Helium',
+    abbreviation: 'He'
 }
 ];
 
 function findTheIndex(searchWord)
 {
-	//name of the array we are searching
-	let whichArray = elements;
+    //name of the array we are searching
+    let whichArray = elements;
 
-	//index in the array of the found word
+    //index in the array of the found word
     let index = whichArray.findIndex(
         function(whichArray)
         {
@@ -48,7 +48,7 @@ function findTheIndex(searchWord)
 
 function displayResult(theChoice)
 {
-	//display the name and abbreviation of the chosen index
+    //display the name and abbreviation of the chosen index
     document.getElementById("showResult").innerHTML = elements[findTheIndex(theChoice)].name + "<br>" + elements[findTheIndex(theChoice)].abbreviation;
 }
 
