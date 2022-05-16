@@ -1,0 +1,85 @@
+<!-- Dedicated to God the Father -->
+<!-- All Rights Reserved Christopher Topalian Copyright 2000-2022 -->
+<!-- js_buttons_create_from_array_of_objects_002.html -->
+<!--
+    Creates buttons from a specified array of objects.
+    Each button opens a specific webpage.
+    We apply more custom style to each button using JavaScript.
+-->
+
+<html>
+<head>
+<title> Creates Buttons from a Specified Array of Objects. Each Button Opens a Specific Webpage. We Apply more custom Style to each Button using JavaScript. </title>
+
+<script>
+
+let collegeWebpages = [
+{
+    name: "GitHub of Christopher Topalian",
+    url: "https://github.com/ChristopherTopalian"
+},
+{
+    name: "College of Scripting Music & Science",
+    url: "https://CollegeOfScripting.weebly.com"
+}
+];
+
+function buttonsCreate(whichArray)
+{
+    for(let x = 0; x < whichArray.length; x++)
+    {
+        let theButton = document.createElement("button");
+
+        theButton.style.display = "flex";
+        theButton.style.flexDirection = "column";
+
+        theButton.style.margin = "4px";
+        theButton.style.paddingTop = "2px";
+        theButton.style.paddingBottom = "2px";
+        theButton.style.paddingLeft = "8px";
+        theButton.style.paddingRight = "8px";
+
+        theButton.style.backgroundColor = "rgb(0, 0, 0)";
+
+        theButton.style.borderStyle = "solid";
+        theButton.style.borderWidth = "2px";
+        theButton.style.borderRadius = "8px";
+        theButton.style.borderColor = "rgb(0, 0, 0)";
+
+        theButton.style.fontFamily = "tahoma";
+        theButton.style.fontWeight = "bold";
+        theButton.style.fontSize = "15px";
+        theButton.style.color = "rgb(255, 255, 255)";
+
+        theButton.onmouseenter = function() { theButton.style.borderColor = "rgb(255, 255, 255)"; };
+
+        theButton.onmouseout = function() { theButton.style.borderColor = "rgb(0, 0, 0)"; };
+
+        theButton.onclick = function() { window.open(whichArray[x].url, "", "width = 1000, height = 800"); };
+
+        theButton.innerHTML = whichArray[x].name;
+
+        document.body.append(theButton);
+    }
+}
+
+</script>
+</head>
+
+<body onload = "buttonsCreate(collegeWebpages);" style = "background-color: rgb(120, 120, 120);">
+
+<center>
+<div style = "font-family: arial; font-size: 22px; color: rgb(255, 255, 255);">
+Dedicated to God the Father
+</div>
+</center>
+
+<center>
+<div style = "margin: 1px; padding-top: 2px; padding-bottom: 1px; font-family: arial; font-size: 32px; font-weight: bold; color: rgb(255, 255, 255);"> College of Scripting Music & Science
+</div>
+</center>
+
+<hr>
+
+</body>
+</html>
