@@ -1,0 +1,90 @@
+<!-- Dedicated to God the Father -->
+<!-- All Rights Reserved Christopher Topalian Copyright 2000-2022 -->
+<!-- js_array_of_objects_find_index_by_name_002.html -->
+<!--
+    finds the index by name in an array of objects
+    and shows the data of the found index object
+    in this version, we add more buttons to show more elements
+-->
+
+<html>
+<head>
+<title> js_array_of_objects_find_index_by_name_002.html </title>
+</head>
+
+<body style = "background-color: rgb(225, 225, 225);">
+
+<div id = "theResultId"> ELEMENTS </div>
+
+<button onclick = "displayResult('elements', 'Hydrogen');"> Hydrogen </button>
+
+<button onclick = "displayResult('elements', 'Helium')"> Helium </button>
+
+<button onclick = "displayResult('elements', 'Lithium')"> Lithium </button>
+
+<button onclick = "displayResult('elements', 'Berryllium')"> Berryllium </button>
+
+<button onclick = "displayResult('elements', 'Boron')"> Boron </button>
+
+<button onclick = "displayResult('elements', 'Carbon')"> Carbon </button>
+
+<button onclick = "displayResult('elements', 'Nitrogen')"> Nitrogen </button>
+
+<script>
+
+let elements = [
+{
+    name: "Hydrogen",
+    abbreviation: "H"
+},
+{
+    name: "Helium",
+    abbreviation: "He"
+},
+{
+    name: "Lithium",
+    abbreviation: "Li"
+},
+{
+    name: "Berryllium",
+    abbreviation: "Be"
+},
+{
+    name: "Boron",
+    abbreviation: "B"
+},
+{
+    name: "Carbon",
+    abbreviation: "C"
+},
+{
+    name: "Nitrogen",
+    abbreviation: "N"
+}
+];
+
+function findTheIndex(whichArray, searchWord)
+{
+    //name of the array we are searching
+    let theArray = eval(whichArray);
+
+    //index in the array of the found word
+    let index = theArray.findIndex(
+        function(theArray)
+        {
+            return theArray.name === searchWord;
+        }
+    );
+    return index;
+}
+
+function displayResult(whichArray, theChoice)
+{
+    //display the name and abbreviation of the chosen index
+    document.getElementById("theResultId").innerHTML = elements[findTheIndex(whichArray, theChoice)].name + "<br>" + elements[findTheIndex(whichArray, theChoice)].abbreviation;
+}
+
+</script>
+
+</body>
+</html>
