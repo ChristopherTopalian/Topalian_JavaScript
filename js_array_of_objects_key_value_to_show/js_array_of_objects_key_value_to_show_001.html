@@ -1,0 +1,76 @@
+<!-- Dedicated to God the Father -->
+<!-- All Rights Reserved Christopher Topalian Copyright 2000-2022 -->
+<!-- https://github.com/ChristopherTopalian -->
+<!-- js_array_of_objects_key_value_to_show_001.html -->
+<!--
+    shows the specified key value
+    from our specified array of objects
+-->
+
+<html>
+<head>
+<title> js_array_of_objects_key_value_to_show_001.html </title>
+</head>
+
+<body style = "background-color: rgb(120, 120, 120);">
+
+<script>
+
+let people = [
+{
+    nameFirst: "Kayle",
+    nameLast: "Lane",
+    height: "5 feet 10 inches",
+    weight: 140,
+    eyeColor: "Brown",
+    hairColor: "Black"
+},
+{
+    nameFirst: "Amber",
+    nameLast: "Taylor",
+    height: "5 feet 9 inches",
+    weight: 130,
+    eyeColor: "Blue",
+    hairColor: "Dark Brown"
+}
+];
+
+function keyValueToShow(whichArray, whichKey)
+{
+    let theItem = whichArray;
+
+    let theChoice = theItem + "[x]." + whichKey;
+
+    let theResult = "";
+
+    for (let x = 0; x < eval(whichArray).length; x++)
+    {
+        theResult += eval(theChoice);
+
+        theResult += '<br>';
+    }
+
+    return theResult;
+}
+
+function displayResult(whichKeyValue)
+{
+    let theResultOutput = document.getElementById("theResultOutputId");
+
+    theResultOutput.style.fontSize = "20px";
+    theResultOutput.style.fontWeight = "bold";
+    theResultOutput.style.color = "rgb(255, 255, 255)";
+
+    theResultOutput.innerHTML = whichKeyValue;
+}
+
+</script>
+
+<button onclick = "displayResult(keyValueToShow('people', 'nameFirst'));"> Show First Names </button>
+
+<button onclick = "displayResult(keyValueToShow('people', 'nameLast'));"> Show Last Names </button>
+
+<div id = "theResultOutputId"></div>
+
+</body>
+</html>
