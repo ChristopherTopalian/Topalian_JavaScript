@@ -1,0 +1,189 @@
+<!-- Dedicated to God the Father -->
+<!-- All Rights Reserved Christopher Topalian Copyright 2000-2022 -->
+<!-- https://github.com/ChristopherTopalian -->
+<!-- js_array_of_objects_filter_to_new_array_of_objects_002.html -->
+<!--
+filters an array of objects by a criteria
+and creates a new array of objects from it
+
+in this version, we populate the new array differently than the previous version
+-->
+
+<html>
+<head>
+<title> js_array_of_objects_filter_to_new_array_of_objects_002.html </title>
+
+<style>
+
+body
+{
+    background-color: rgb(40, 40, 40);
+    font-family: arial;
+    color: rgb(255, 255, 255);
+}
+
+.hrStyle
+{
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.resultStyle
+{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: rgb(70, 70, 70);
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionStyle
+{
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.testStyle
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.buttonStyle
+{
+    width: 100px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+}
+
+.buttonStyle:hover
+{
+    border-color: rgb(255, 255, 255);
+}
+
+.buttonStyle:active
+{
+    position: relative;
+    top: 2px;
+}
+
+.textareaStyle
+{
+    width: 100%;
+    min-height: 100px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    margin: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+</style>
+
+<script>
+
+let arrayPeople = [
+{
+    name: "Kayla",
+    age: 29
+},
+{
+    name: "Daisy",
+    age: 32
+},
+{
+    name: "Tabitha",
+    age: 44
+},
+{
+    name: "Jane",
+    age: 46
+}
+];
+
+let arrayFiltered = [ ];
+
+function ageFilterAndShow(whichArray, whichAge)
+{
+    whichArray = eval(whichArray);
+
+    let theTextarea = document.getElementById("resultId");
+
+    for (let x = 0; x < whichArray.length; x++)
+    {
+        let theObject = { };
+
+        if (whichArray[x].age >= whichAge)
+        {
+            theObject.name = whichArray[x].name;
+
+            theObject.age = whichArray[x].age;
+
+            arrayFiltered.push(theObject);
+        }
+    }
+
+    theTextarea.value = JSON.stringify(arrayFiltered);
+
+    console.log(arrayFiltered);
+
+    arrayFiltered = [ ];
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class = "resultStyle">
+
+<div class = "descriptionStyle">
+<hr class = "hrStyle">
+creates a new array of objects that passed the test
+</div>
+
+<hr class = "hrStyle">
+
+<div class = "testStyle">
+if (whichArray[x].age >= whichAge)
+</div>
+
+<hr class = "hrStyle">
+
+<button class = "buttonStyle" onclick = "ageFilterAndShow('arrayPeople', 30);">
+Result
+</button>
+
+<hr class = "hrStyle">
+
+<textarea id = "resultId" class = "textareaStyle"></textarea>
+
+</div>
+
+</body>
+
+</html>
